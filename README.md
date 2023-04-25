@@ -1,6 +1,8 @@
 Using @robrich's test code (https://github.com/robrich/web-test-everything) and @bornasepic's tic-tac-toe application code (https://github.com/BornaSepic/Tic-Tac-Toe) to learn about a flurry of things all at once, including but not limited to:
 - JS Web Development
 - Testing JS
+- Typescript
+- Vue
 
 
 -------------------------------
