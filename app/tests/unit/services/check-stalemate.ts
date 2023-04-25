@@ -19,6 +19,21 @@ describe('/service/check-win', () => {
 
   });
 
+  it('should NOT mark a stalemate after Player x wins using max turns', () => {
+
+    // arrange
+    const players: Player[] = [
+      'x', 'o', 'x',
+      'x', 'o', 'o',
+      'x', 'x', 'o'
+    ];
+    const expected = false;
+
+    // act & assert
+    runTest(players, expected);
+
+  });
+
   it('should mark not a stalemate', () => {
 
     // arrange

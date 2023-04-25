@@ -49,6 +49,21 @@ describe('/service/check-win', () => {
 
   });
 
+  it('should mark x winner after max turns', () => {
+
+    // arrange
+    const players: Player[] = [
+      'x', 'o', 'x',
+      'x', 'o', 'o',
+      'x', 'x', 'o'
+    ];
+    const expected: number[] = [0, 3, 6];
+
+    // act & assert
+    runTest(players, expected);
+
+  });
+
   it('should mark no winner', () => {
 
     // arrange
