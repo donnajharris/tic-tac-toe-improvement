@@ -6,7 +6,7 @@ Using @robrich's test code (https://github.com/robrich/web-test-everything) and 
 
 
 -------------------------------
-### Original readme.md
+### Original readme.md with my own edits
 
 Scaling the Testing Pyramid in JavaScript
 =========================================
@@ -49,6 +49,8 @@ Usage
 ### Run the website:
 
 1. Start redis in docker by running `docker-compose up`
+
+(Note: if installing Docker Desktop on a Mac OS, be sure to give Docker permission at the path, in one way or another. See my post. https://medium.com/@foundationalthings/getting-decked-out-with-docker-ed75e1c1f9e8)
 
 2. Start api by running this from a terminal:
 
