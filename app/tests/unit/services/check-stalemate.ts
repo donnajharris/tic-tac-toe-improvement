@@ -1,10 +1,10 @@
-import checkAllTurnsPlayed from '../../../src/services/check-all-turns-played';
+import checkStalemate from '../../../src/services/check-stalemate';
 import { Player } from '../../../src/types/player';
 import { Square } from '../../../src/types/square';
 
-describe('/service/check-all-turns-played', () => {
+describe('/service/check-win', () => {
 
-  it('should indicate all turns have been played - stalemate', () => {
+  it('should mark stalemate', () => {
 
     // arrange
     const players: Player[] = [
@@ -19,7 +19,7 @@ describe('/service/check-all-turns-played', () => {
 
   });
 
-  it('should indicate all turns have been played - win', () => {
+  it('should NOT mark a stalemate after Player x wins using max turns', () => {
 
     // arrange
     const players: Player[] = [
@@ -27,14 +27,14 @@ describe('/service/check-all-turns-played', () => {
       'x', 'o', 'o',
       'x', 'x', 'o'
     ];
-    const expected = true;
+    const expected = false;
 
     // act & assert
     runTest(players, expected);
 
   });
 
-  it('should indicate there are remaining turns - no turns played', () => {
+  it('should mark not a stalemate', () => {
 
     // arrange
     const players: Player[] = [
@@ -48,27 +48,13 @@ describe('/service/check-all-turns-played', () => {
     runTest(players, expected);
   });
 
-  it('should indicate there are remaining turns - game in progress', () => {
-
-    // arrange
-    const players: Player[] = [
-      'x', 'o', 'x',
-      'x', 'o', 'o',
-      undefined, 'x', 'o'
-    ];
-    const expected = false;
-
-    // act & assert
-    runTest(players, expected);
-  });
-
   function runTest(players: Player[], expected: boolean) {
 
     // arrange
     const squares = makeSquares(players);
 
     // act
-    const actual = checkAllTurnsPlayed(squares);
+    const actual = checkStalemate(squares);
 
     // assert
     expect(actual).toEqual(expected);
