@@ -137,7 +137,6 @@ export default defineComponent({
 
   }
 });
-/* remove this comment later */
 
 </script>
 
