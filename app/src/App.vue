@@ -97,11 +97,12 @@ export default defineComponent({
           }
         });
         this.updateScore(this.turn as Winner);
-      }
-      const stalemate: boolean = checkStalemate(this.squares);
-      if (stalemate) {
-        this.gameOver = true;
-        this.updateScore('tie');
+      } else {
+        const stalemate: boolean = checkStalemate(this.squares);
+        if (stalemate) {
+          this.gameOver = true;
+          this.updateScore('tie');
+        }
       }
     },
 
@@ -147,26 +148,30 @@ export default defineComponent({
   color: #2c3e50;
   margin-top: 60px;
 }
+
 .flex {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
+
 .board {
   width: 613px;
   margin: auto;
 }
+
 .flex-spread {
   display: flex;
   flex-direction: row;
   flex-wrap: no-wrap;
   justify-content: space-between;
 }
+
 .footer {
   width: 613px;
   margin: auto;
 }
-.footer > * {
+
+.footer>* {
   width: 49%;
-}
-</style>
+}</style>
