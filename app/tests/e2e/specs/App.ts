@@ -75,4 +75,22 @@ describe('App.vue', () => {
 
   });
 
+  it('x should win with max turns', () => {
+
+    // act
+    cy.get('#0').click();
+    cy.get('#1').click();
+    cy.get('#3').click();
+    cy.get('#4').click();
+    cy.get('#2').click();
+    cy.get('#5').click();
+    cy.get('#7').click();
+    cy.get('#8').click();
+    cy.get('#6').click();
+
+    // assert
+    cy.get('#6 .win').should('exist');
+
+  });
+
 });

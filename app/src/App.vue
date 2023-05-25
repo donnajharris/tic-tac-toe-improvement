@@ -25,7 +25,7 @@ import NewGame from './components/NewGame.vue';
 import LeaderBoard from './components/LeaderBoard.vue';
 import { getScores, updateScore, clearScores } from './data/scores';
 import checkWin from './services/check-win';
-import checkStalemate from './services/check-stalemate';
+import checkAllTurnsPlayed from './services/check-all-turns-played';
 import { getSquareById } from './services/get-square-by-id';
 import scoreToList from './services/score-to-list';
 import { Player, Winner } from './types/player';
@@ -98,7 +98,7 @@ export default defineComponent({
         });
         this.updateScore(this.turn as Winner);
       } else {
-        const stalemate: boolean = checkStalemate(this.squares);
+        const stalemate: boolean = checkAllTurnsPlayed(this.squares);
         if (stalemate) {
           this.gameOver = true;
           this.updateScore('tie');
@@ -174,4 +174,5 @@ export default defineComponent({
 
 .footer>* {
   width: 49%;
-}</style>
+}
+</style>
