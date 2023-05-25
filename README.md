@@ -11,7 +11,7 @@ Using @robrich's test code (https://github.com/robrich/web-test-everything) and 
 Scaling the Testing Pyramid in JavaScript
 =========================================
 
-[![Build and Test](https://github.com/robrich/web-test-everything/actions/workflows/build-and-test.yaml/badge.svg)](https://github.com/robrich/web-test-everything/actions/workflows/build-and-test.yaml)
+[![Build and Test](https://github.com/donnajharris/tic-tac-toe-improvement/actions/workflows/build-and-test.yaml/badge.svg)](https://github.com/donnajharris/tic-tac-toe-improvement/actions/workflows/build-and-test.yaml)
 
 This is the companion code to the talk at https://robrich.org/slides/web-test-all-the-things/
 
